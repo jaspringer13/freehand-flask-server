@@ -8,6 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 @app.route("/parse_intent", methods=["POST"])
 def parse_intent():
     data = request.get_json()
+    print("Incoming data:", data)
     user_input = data.get("speech", "I didn't catch that.")
 
     try:
